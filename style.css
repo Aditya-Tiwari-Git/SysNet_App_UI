@@ -1,0 +1,374 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #1a1b1e;
+  --bg-sidebar: #212226;
+  --bg-card: #212226;
+  --text-white: #ffffff;
+  --text-gray: #9ca3af;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --green-500: #22c55e;
+  --orange-500: #f97316;
+  --purple-500: #a855f7;
+  --red-500: #ef4444;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  line-height: 1.5;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 256px;
+  background-color: var(--bg-sidebar);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.logo-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--blue-500);
+}
+
+.logo span {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.menu {
+  flex: 1;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  color: var(--text-gray);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  margin-bottom: 0.25rem;
+  transition: all 0.2s;
+}
+
+.menu-item:hover {
+  background-color: #2a2b2f;
+  color: var(--text-white);
+}
+
+.menu-item.active {
+  background-color: var(--blue-600);
+  color: var(--text-white);
+}
+
+.menu-item i {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.collapse-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  color: var(--text-gray);
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.collapse-btn:hover {
+  background-color: #2a2b2f;
+  color: var(--text-white);
+}
+
+/* Content Styles */
+.content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.last-scan {
+  color: var(--text-gray);
+}
+
+.scan-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--blue-600);
+  color: var(--text-white);
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.scan-btn:hover {
+  background-color: var(--blue-500);
+}
+
+/* Scanning Animation */
+.scanning-animation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.scanning-animation.hidden {
+  display: none;
+}
+
+.scanner {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+}
+
+.shield-icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 4rem;
+  height: 4rem;
+  color: var(--blue-500);
+}
+
+.scan-ring {
+  position: absolute;
+  inset: 0;
+  border: 4px solid var(--blue-500);
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+}
+
+.scan-ring::before {
+  content: '';
+  position: absolute;
+  top: -0.25rem;
+  left: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--blue-500);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background-color: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stat-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stat-title h2 {
+  font-size: 1.25rem;
+}
+
+.stat-value {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.stat-detail {
+  color: var(--text-gray);
+}
+
+.text-green { color: var(--green-500); }
+.text-blue { color: var(--blue-500); }
+.text-orange { color: var(--orange-500); }
+.text-purple { color: var(--purple-500); }
+.text-red { color: var(--red-500); }
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 0.625rem;
+  background-color: #374151;
+  border-radius: 9999px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--blue-600);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+/* Protection Cards */
+.section-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.protection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.protection-card {
+  background-color: var(--bg-card);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.protection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.protection-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.protection-title h3 {
+  color: var(--text-white);
+}
+
+.protection-title p {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+}
+
+.configure-btn {
+  color: var(--blue-500);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.configure-btn:hover {
+  color: var(--blue-600);
+}
+
+.protection-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-indicator {
+  font-size: 0.875rem;
+  color: var(--green-500);
+}
+
+/* Toggle Switch */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 2.75rem;
+  height: 1.5rem;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #374151;
+  transition: .4s;
+  border-radius: 9999px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 1.25rem;
+  width: 1.25rem;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--blue-600);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(1.25rem);
+}

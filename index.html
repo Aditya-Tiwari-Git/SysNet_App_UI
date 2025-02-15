@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SysNet Cleaner</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">
+        <i data-lucide="shield" class="logo-icon"></i>
+        <span>SysNet Cleaner</span>
+      </div>
+      
+      <nav class="menu">
+        <a href="#" class="menu-item active" data-page="dashboard">
+          <i data-lucide="layout-dashboard"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="menu-item" data-page="antivirus">
+          <i data-lucide="shield"></i>
+          <span>Antivirus</span>
+        </a>
+        <a href="#" class="menu-item" data-page="privacy">
+          <i data-lucide="lock"></i>
+          <span>Privacy</span>
+        </a>
+        <a href="#" class="menu-item" data-page="performance">
+          <i data-lucide="zap"></i>
+          <span>Performance</span>
+        </a>
+        <a href="#" class="menu-item" data-page="firewall">
+          <i data-lucide="flame"></i>
+          <span>Firewall</span>
+        </a>
+        <a href="#" class="menu-item" data-page="updates">
+          <i data-lucide="download"></i>
+          <span>Updates</span>
+        </a>
+        <a href="#" class="menu-item" data-page="add-devices">
+          <i data-lucide="laptop"></i>
+          <span>Add Devices</span>
+        </a>
+        <a href="#" class="menu-item" data-page="settings">
+          <i data-lucide="settings"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <button class="collapse-btn">
+        <i data-lucide="minimize-2"></i>
+        <span>Collapse</span>
+      </button>
+    </aside>
+
+    <main class="content">
+      <div class="page" id="dashboard">
+        <div class="header">
+          <div>
+            <h1>Welcome back, User</h1>
+            <p class="last-scan">Last scan: Today at 14:30</p>
+          </div>
+          <button class="scan-btn">
+            <i data-lucide="shield"></i>
+            <span>Quick Scan</span>
+          </button>
+        </div>
+
+        <div class="scanning-animation hidden">
+          <div class="scanner">
+            <i data-lucide="shield" class="shield-icon"></i>
+            <div class="scan-ring"></div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-title">
+                <i data-lucide="shield" class="text-green"></i>
+                <h2>System Health</h2>
+              </div>
+              <span class="stat-value text-green">98%</span>
+            </div>
+            <p class="stat-detail">3 items need attention</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-title">
+                <i data-lucide="cpu" class="text-blue"></i>
+                <h2>CPU Usage</h2>
+              </div>
+              <span class="stat-value cpu-usage">32%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 32%"></div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-title">Protection Status</h2>
+        <div class="protection-grid">
+          <div class="protection-card">
+            <div class="protection-header">
+              <div class="protection-title">
+                <i data-lucide="shield" class="text-blue"></i>
+                <div>
+                  <h3>Real-time Protection</h3>
+                  <p>Last update: 2 minutes ago</p>
+                </div>
+              </div>
+              <button class="configure-btn">Configure</button>
+            </div>
+            <div class="protection-status">
+              <span class="status-indicator">● Enabled</span>
+              <label class="toggle">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="protection-card">
+            <div class="protection-header">
+              <div class="protection-title">
+                <i data-lucide="alert-triangle" class="text-orange"></i>
+                <div>
+                  <h3>Firewall Status</h3>
+                  <p>Last update: 5 minutes ago</p>
+                </div>
+              </div>
+              <button class="configure-btn">Configure</button>
+            </div>
+            <div class="protection-status">
+              <span class="status-indicator">● Active</span>
+              <label class="toggle">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="protection-card">
+            <div class="protection-header">
+              <div class="protection-title">
+                <i data-lucide="database" class="text-purple"></i>
+                <div>
+                  <h3>Web Protection</h3>
+                  <p>Last update: 1 minute ago</p>
+                </div>
+              </div>
+              <button class="configure-btn">Configure</button>
+            </div>
+            <div class="protection-status">
+              <span class="status-indicator">● Enabled</span>
+              <label class="toggle">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="protection-card">
+            <div class="protection-header">
+              <div class="protection-title">
+                <i data-lucide="shield" class="text-red"></i>
+                <div>
+                  <h3>Ransomware Protection</h3>
+                  <p>Last update: 3 minutes ago</p>
+                </div>
+              </div>
+              <button class="configure-btn">Configure</button>
+            </div>
+            <div class="protection-status">
+              <span class="status-indicator">● Active</span>
+              <label class="toggle">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
